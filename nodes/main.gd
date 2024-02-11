@@ -1,6 +1,7 @@
 extends Node
 @export var mob_scene : PackedScene
 @export var mine_scene : PackedScene
+@export var bounce_scene: PackedScene
 
 var score
 
@@ -34,6 +35,9 @@ func _on_score_timer_timeout():
 func _on_start_timer_timeout():
 	$mobTimer.start()
 	$scoreTimer.start()
+
+func spawnMob():
+	pass
 
 func _on_mob_timer_timeout():
 	# Create a new instanceo of the mob scene
@@ -74,7 +78,25 @@ func _on_mob_timer_timeout():
 	mine.position = mine_spawn_location
 	if score <= 20:
 		#var probability : int = 10
-		# if (randi() % 4) == (4 - 1) === 1/4 chance
+		# if (randi() % 4) == (4 - 1) == 1/4 chance
 		if (randi() % 4) == (4 - 1):
 			add_child(mine)
-
+			
+	#################
+	# Bounce
+	#################
+	
+	var bounce_ball = bounce_scene.instantiate()
+	
+	var bounce_ball_spawn_location = $mobPath/mobSpawnLocation
+	bounce_ball_spawn_location.progress_ratio = randf()
+	
+	var bounce_ball_direction = bounce_ball_spawn_location.rotation + PI / 2
+	bounce_ball.position = bounce_ball_spawn_location.position
+	
+	var bounce_ball_velocity = Vector2(randf_range(150.0, 250.0), 0.0)
+	bounce_ball.linear_velocity = velocity.rotated(bounce_ball_direction)
+	
+	if score >= 1:
+		if (randi() % 4) == (4 - 1):
+			add_child(bounce_ball)
