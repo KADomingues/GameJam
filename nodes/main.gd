@@ -1,10 +1,12 @@
 extends Node
 @export var mob_scene : PackedScene
+@export var mine_scene : PackedScene
 
 var score
 
 func _ready():
 	#new_game()
+	randomize()
 	pass 
 
 func game_over():
@@ -36,7 +38,7 @@ func _on_start_timer_timeout():
 func _on_mob_timer_timeout():
 	# Create a new instanceo of the mob scene
 	var mob = mob_scene.instantiate()
-	
+		
 	# Choose a random location on path2D
 	var mob_spawn_location = $mobPath/mobSpawnLocation
 	mob_spawn_location.progress_ratio = randf()
@@ -58,4 +60,21 @@ func _on_mob_timer_timeout():
 	mob.linear_velocity = velocity.rotated(direction)
 	
 	# Spawn the mob
-	add_child(mob)
+	if score >= 10:
+		if (randi() % 4) == (4 - 1):
+			add_child(mob)
+	
+	#################
+	# Mines
+	#################
+	var mine = mine_scene.instantiate()
+	var mine_spawn_location = $Player.get_position()
+	mine_spawn_location.x += randf_range(-40, 40)
+	mine_spawn_location.y += randf_range(-40, 40)
+	mine.position = mine_spawn_location
+	if score <= 20:
+		#var probability : int = 10
+		# if (randi() % 4) == (4 - 1) === 1/4 chance
+		if (randi() % 4) == (4 - 1):
+			add_child(mine)
+

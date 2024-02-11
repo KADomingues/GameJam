@@ -52,7 +52,6 @@ func _process(delta):
 		#else:
 		#	$AnimatedSprite2D.flip_h = false
 
-
 func _on_body_entered(body):
 	hide()
 	hit.emit()

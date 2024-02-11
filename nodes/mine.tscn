@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://menfgaui84o3"]
+
+[ext_resource type="Texture2D" uid="uid://1kws1mtr7p7x" path="res://assets/art/ExclamationMark1.png" id="1_2ced5"]
+[ext_resource type="Script" path="res://nodes/mine.gd" id="1_f3xhu"]
+[ext_resource type="Texture2D" uid="uid://78maop0qmgkn" path="res://assets/art/Skull1.png" id="2_klivx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6q06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2ced5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_klivx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k37wy"]
+size = Vector2(50, 50)
+
+[node name="mine" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_f3xhu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_y6q06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k37wy")
