@@ -13,6 +13,7 @@ func game_over():
 	$HUD.show_game_over()
 	$music.stop()
 	$deathSound.play()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 func new_game():
 	score = 0
@@ -22,7 +23,7 @@ func new_game():
 	$HUD.show_message("Get Ready!")
 	$music.play()
 	get_tree().call_group("mobs", "queue_free")
-
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _on_score_timer_timeout():
 	score += 1

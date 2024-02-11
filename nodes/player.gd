@@ -25,6 +25,11 @@ func _process(delta):
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 	
+	if Input.is_action_pressed("use_dash"):
+		speed = 600
+	else:
+		speed = 300
+	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		# $AnimatedSprite2D.play() is the same as get_node("AnimatedSprite2D").play()
