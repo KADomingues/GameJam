@@ -18,6 +18,7 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision_info.get_normal())
 		velocity.x *= (1.1)
 		velocity.y *= (1.1)
+		#print("I Collided with ", collision_info.get_collider().name)
 	if velocity.x >= 400 || velocity.y >= 400:
 		set_collision_mask_value(4, false)
 

@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtgpsgp40v3st"]
+[gd_scene load_steps=9 format=3 uid="uid://dtgpsgp40v3st"]
 
 [ext_resource type="FontFile" uid="uid://bvlqcudd8dv6" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_0gd6f"]
 [ext_resource type="Script" path="res://nodes/hud.gd" id="1_17rc1"]
+[ext_resource type="Texture2D" uid="uid://6kn46166ps4e" path="res://assets/art/ArrowKeys1.png" id="3_dx782"]
+[ext_resource type="Texture2D" uid="uid://dvjhij0y44hpb" path="res://assets/art/LOGO-13.png" id="3_iwfaj"]
+[ext_resource type="Texture2D" uid="uid://ja0tf2cx5pep" path="res://assets/art/WasdKeys1.png" id="4_1fudv"]
+[ext_resource type="Texture2D" uid="uid://dd1qrlh556fw2" path="res://assets/art/button_xbox_analog_l.png" id="5_nadfi"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_6hhuy"]
 action = &"start_game"
@@ -26,24 +30,10 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="message" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -120.0
-offset_right = 240.0
-offset_bottom = 120.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_0gd6f")
-theme_override_font_sizes/font_size = 64
-text = "Dodge the Traps!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+[node name="logo" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_iwfaj")
 
 [node name="startButton" type="Button" parent="."]
 anchors_preset = 7
@@ -66,5 +56,58 @@ text = "Start"
 wait_time = 2.0
 one_shot = true
 
+[node name="movimentLabel" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = -170.0
+offset_right = 151.0
+offset_bottom = -126.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_0gd6f")
+theme_override_font_sizes/font_size = 36
+text = "Moviment: 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="arrowKeys" type="Sprite2D" parent="movimentLabel"]
+position = Vector2(150, 15)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_dx782")
+
+[node name="wasdKeys" type="Sprite2D" parent="movimentLabel"]
+position = Vector2(230, 15)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_1fudv")
+
+[node name="joyLeftStick" type="Sprite2D" parent="movimentLabel"]
+position = Vector2(310, 15)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_nadfi")
+
+[node name="volumeLabel" type="Label" parent="."]
+offset_left = 130.0
+offset_top = 614.0
+offset_right = 170.0
+offset_bottom = 658.0
+theme_override_fonts/font = ExtResource("1_0gd6f")
+theme_override_font_sizes/font_size = 36
+text = "Volume:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HSlider" type="HSlider" parent="volumeLabel"]
+offset_left = 145.0
+offset_top = 17.0
+offset_right = 328.0
+offset_bottom = 33.0
+min_value = -30.0
+max_value = 0.0
+
 [connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="messageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="value_changed" from="volumeLabel/HSlider" to="." method="_on_h_slider_value_changed"]

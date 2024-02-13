@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgnoe71sh5uq0"]
+[gd_scene load_steps=12 format=3 uid="uid://bgnoe71sh5uq0"]
 
 [ext_resource type="Texture2D" uid="uid://bkc2j6erajky8" path="res://assets/art/enemyFlyingAlt_1.png" id="1_cwiy6"]
 [ext_resource type="Script" path="res://nodes/mob1.gd" id="1_fq8xo"]
+[ext_resource type="Texture2D" uid="uid://dljsi7ffh843p" path="res://assets/art/sprites/SPRITE_ANJO.png" id="2_aax14"]
 [ext_resource type="Texture2D" uid="uid://cj00qi0jmsgts" path="res://assets/art/enemyFlyingAlt_2.png" id="2_kirma"]
+[ext_resource type="Texture2D" uid="uid://c1ydcvgek1nqy" path="res://assets/art/sprites/SPRITE_ANJO_02-03.png" id="3_5ln42"]
 [ext_resource type="Texture2D" uid="uid://duhsvjde3dgw" path="res://assets/art/enemySwimming_1.png" id="3_n4rum"]
 [ext_resource type="Texture2D" uid="uid://cs6ayx4sqvveu" path="res://assets/art/enemySwimming_2.png" id="4_p8g22"]
 [ext_resource type="Texture2D" uid="uid://ciot40a6yl08k" path="res://assets/art/enemyWalking_1.png" id="5_qtpdt"]
@@ -10,6 +12,17 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ycv6f"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aax14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5ln42")
+}],
+"loop": true,
+"name": &"demon",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_cwiy6")
@@ -56,9 +69,11 @@ script = ExtResource("1_fq8xo")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.7, 0.7)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_ycv6f")
-animation = &"fly"
+animation = &"demon"
+frame_progress = 0.794978
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

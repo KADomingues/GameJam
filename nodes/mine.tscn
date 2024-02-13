@@ -1,21 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://menfgaui84o3"]
+[gd_scene load_steps=7 format=3 uid="uid://menfgaui84o3"]
 
-[ext_resource type="Texture2D" uid="uid://1kws1mtr7p7x" path="res://assets/art/ExclamationMark1.png" id="1_2ced5"]
 [ext_resource type="Script" path="res://nodes/mine.gd" id="1_f3xhu"]
-[ext_resource type="Texture2D" uid="uid://78maop0qmgkn" path="res://assets/art/Skull1.png" id="2_klivx"]
+[ext_resource type="Texture2D" uid="uid://2c77w4nb63rk" path="res://assets/art/WhiteExclamationMark1.png" id="2_af4cq"]
+[ext_resource type="Texture2D" uid="uid://blr7dpbj3jvwi" path="res://assets/art/sprites/SPRITE_FOGO_INFERNO.png" id="3_yev5o"]
+[ext_resource type="Texture2D" uid="uid://s3mny4q8gsqi" path="res://assets/art/sprites/SPRITE_FOGO_INFERNO_02-12.png" id="4_5hmbc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6q06"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_2ced5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_klivx")
+"texture": ExtResource("2_af4cq")
 }],
 "loop": true,
 "name": &"default",
-"speed": 2.0
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yev5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5hmbc")
+}],
+"loop": true,
+"name": &"on_fire",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k37wy"]
@@ -28,7 +37,7 @@ gravity_scale = 0.0
 script = ExtResource("1_f3xhu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_y6q06")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

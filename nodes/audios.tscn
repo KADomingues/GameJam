@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5uwoddnbn5rn"]
+
+[ext_resource type="AudioStream" uid="uid://bdhpjij76or4v" path="res://assets/art/audio/start.ogg" id="1_8wh1u"]
+[ext_resource type="AudioStream" uid="uid://b6ncawx5euk3w" path="res://assets/art/audio/BGM.ogg" id="2_0f14h"]
+[ext_resource type="AudioStream" uid="uid://3r6ysb7xb6sp" path="res://assets/art/audio/morte.ogg" id="3_gvxyx"]
+
+[node name="audios" type="Node"]
+
+[node name="start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_8wh1u")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0f14h")
+bus = &"Music"
+
+[node name="deathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gvxyx")

@@ -14,8 +14,8 @@ func game_over():
 	$scoreTimer.stop()
 	$mobTimer.stop()
 	$HUD.show_game_over()
-	$music.stop()
-	$deathSound.play()
+	$audios/BGM.stop()
+	$audios/deathSound.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 func new_game():
@@ -24,7 +24,8 @@ func new_game():
 	$startTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready!")
-	$music.play()
+	$audios/start.play()
+	$audios/BGM.play()
 	get_tree().call_group("mobs", "queue_free")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
@@ -36,7 +37,7 @@ func _on_start_timer_timeout():
 	$mobTimer.start()
 	$scoreTimer.start()
 
-func spawnMine(probability):
+func spawnMine():
 	
 	# Create a new instanceo of the mob scene
 	var mine = mine_scene.instantiate()
@@ -50,10 +51,10 @@ func spawnMine(probability):
 	mine.position = mine_spawn_location
 	
 	# 'if (randi() % 4) == (4 - 1)' means 1/4 chance
-	if (randi() % probability) == (probability - 1):
-		add_child(mine)
+	#if (randi() % probability) == (probability - 1):
+	add_child(mine)
 		
-func spawnMob(probability):
+func spawnMob():
 	# Create a new instanceo of the mob scene
 	var mob = mob_scene.instantiate()
 	
@@ -76,10 +77,10 @@ func spawnMob(probability):
 	var velocity = Vector2(randf_range(150.0, 300.0), 0.0)
 	mob.linear_velocity = velocity.rotated(direction)
 	
-	if (randi() % probability) == (probability - 1):
-		add_child(mob)
+	#if (randi() % probability) == (probability - 1):
+	add_child(mob)
 		
-func spawn_bounce_ball(probability):
+func spawn_bounce_ball():
 	# Create a new instanceo of the ball scene
 	var bounce_ball = bounce_scene.instantiate()
 	
@@ -94,15 +95,18 @@ func spawn_bounce_ball(probability):
 	var bounce_ball_velocity = Vector2(randf_range(150.0, 250.0), randf_range(150.0, 250.0))
 	bounce_ball.linear_velocity = bounce_ball_velocity
 	
-	if (randi() % probability) == (probability - 1):
-		add_child(bounce_ball)
+	#if (randi() % probability) == (probability - 1):
+	add_child(bounce_ball)
 
 func _on_mob_timer_timeout():
 	
-	spawnMine(4)
+	if (randi() % 4) == (4 - 1):
+		spawnMine()
 	
 	if score >= 9:
-		spawnMob(3)
+		if (randi() % 3) == (3 - 1):
+			spawnMob()
 		
-	if score >= 27:
-		spawn_bounce_ball(7)	
+	if score >= 25:
+		if (randi() % 7) == (7 - 1):
+			spawn_bounce_ball()	

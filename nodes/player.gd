@@ -49,10 +49,10 @@ func _process(delta):
 		# Boolean assignment.
 		# a comparison test (boolean) and also assigning a boolean value
 		# Consider this code versus the one-line boolean assignment above:
-		#if velocity.x < 0:
-		#	$AnimatedSprite2D.flip_h = true
-		#else:
-		#	$AnimatedSprite2D.flip_h = false
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
 
 func _on_body_entered(body):
 	hide()
