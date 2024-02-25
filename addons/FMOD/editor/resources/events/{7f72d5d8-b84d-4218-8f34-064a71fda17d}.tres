@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://bvubj64u6ffhx"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/sfx_sword_swish"
+guid = "{7f72d5d8-b84d-4218-8f34-064a71fda17d}"
+name = "sfx_sword_swish"

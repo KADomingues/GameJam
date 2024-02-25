@@ -1,9 +1,17 @@
 extends CanvasLayer
 
 var music_bus = AudioServer.get_bus_index("Music")
+var master_bus = AudioServer.get_bus_index("Master")
+
+#FMOD variables
+@export var bus_asset: BusAsset
+var bus: Bus
 
 # Notifies `Main` node that the button has been pressed
 signal start_game
+
+func _ready():
+	bus = FMODStudioModule.get_studio_system().get_bus(bus_asset.path)
 
 func show_message(text):
 	#$message.text = text
@@ -39,9 +47,12 @@ func _on_message_timer_timeout():
 	$logo.hide()
 
 func _on_h_slider_value_changed(value):
-	AudioServer.set_bus_volume_db(music_bus, value)
+	bus.set_volume(value)
+	#AudioServer.set_bus_volume_db(master_bus, value)
 	
-	if value <= -30:
-		AudioServer.set_bus_mute(music_bus, true)
-	else:
-		AudioServer.set_bus_mute(music_bus, false)
+	#if value <= -30:
+		#AudioServer.set_bus_mute(music_bus, true)
+	#if value <= 0:
+	#	AudioServer.set_bus_mute(master_bus, true)
+	#else:
+	#	AudioServer.set_bus_mute(master_bus, false)

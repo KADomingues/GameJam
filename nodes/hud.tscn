@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtgpsgp40v3st"]
+[gd_scene load_steps=10 format=3 uid="uid://dtgpsgp40v3st"]
 
 [ext_resource type="FontFile" uid="uid://bvlqcudd8dv6" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_0gd6f"]
 [ext_resource type="Script" path="res://nodes/hud.gd" id="1_17rc1"]
+[ext_resource type="BusAsset" uid="uid://c6mu0cygrvrq7" path="res://addons/FMOD/editor/resources/busses/{e19724d4-397a-4979-a959-b28cffa96ad1}.tres" id="2_wohd6"]
 [ext_resource type="Texture2D" uid="uid://6kn46166ps4e" path="res://assets/art/ArrowKeys1.png" id="3_dx782"]
 [ext_resource type="Texture2D" uid="uid://dvjhij0y44hpb" path="res://assets/art/LOGO-13.png" id="3_iwfaj"]
 [ext_resource type="Texture2D" uid="uid://ja0tf2cx5pep" path="res://assets/art/WasdKeys1.png" id="4_1fudv"]
@@ -15,6 +16,7 @@ events = [SubResource("InputEventAction_6hhuy")]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_17rc1")
+bus_asset = ExtResource("2_wohd6")
 
 [node name="scoreLabel" type="Label" parent="."]
 anchors_preset = 5
@@ -101,12 +103,14 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="HSlider" type="HSlider" parent="volumeLabel"]
+layout_mode = 0
 offset_left = 145.0
 offset_top = 17.0
 offset_right = 328.0
 offset_bottom = 33.0
-min_value = -30.0
-max_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="messageTimer" to="." method="_on_message_timer_timeout"]

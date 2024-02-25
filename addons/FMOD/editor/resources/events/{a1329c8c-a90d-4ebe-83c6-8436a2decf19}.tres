@@ -1,0 +1,8 @@
+[gd_resource type="EventAsset" format=3 uid="uid://b6wid1ksrehnn"]
+
+[resource]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Soundtrack/main track"
+guid = "{a1329c8c-a90d-4ebe-83c6-8436a2decf19}"
+name = "main track"

@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://624vfrte8sue"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/SFX/flap"
+guid = "{86951502-d3d0-4927-b14a-3ce9bc75dc8a}"
+name = "flap"

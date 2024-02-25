@@ -1,21 +1,35 @@
 extends Node
-@export var mob_scene : PackedScene
-@export var mine_scene : PackedScene
+@export var mob_scene: PackedScene
+@export var mine_scene: PackedScene
 @export var bounce_scene: PackedScene
+
+# Audio and FMOD variables
+var fmodInstance: EventInstance
+@export var StartGameEvent: EventAsset
+@export var BGMEvent: EventAsset
+@export var DeathEvent: EventAsset
 
 var score
 
 func _ready():
 	#new_game()
 	randomize()
+	#print(event)
+	#FMODRuntime.play_one_shot(event)
+	#fmodInstance = FMODRuntime.create_instance(StartGameEvent)
 	pass 
 
 func game_over():
 	$scoreTimer.stop()
 	$mobTimer.stop()
 	$HUD.show_game_over()
-	$audios/BGM.stop()
-	$audios/deathSound.play()
+	#$audios/BGM.stop()
+	#$audios/deathSound.play()
+	fmodInstance.stop(FMODStudioModule.FMOD_STUDIO_STOP_ALLOWFADEOUT)
+	fmodInstance.release()
+	fmodInstance = FMODRuntime.create_instance(DeathEvent)
+	fmodInstance.start()
+	fmodInstance.release()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 func new_game():
@@ -24,8 +38,16 @@ func new_game():
 	$startTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready!")
-	$audios/start.play()
-	$audios/BGM.play()
+	#$audios/start.play()
+	#$audios/BGM.play()
+	#FMODRuntime.play_one_shot(event)
+	#FMODRuntime.create_instance(event).start()
+	fmodInstance = FMODRuntime.create_instance(StartGameEvent)
+	fmodInstance.start()
+	fmodInstance.release()
+	fmodInstance = FMODRuntime.create_instance(BGMEvent)
+	fmodInstance.start()
+	fmodInstance.release()
 	get_tree().call_group("mobs", "queue_free")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 

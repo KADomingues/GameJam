@@ -1,0 +1,113 @@
+[gd_resource type="ProjectCache" load_steps=12 format=3 uid="uid://ddltcqhqq0uup"]
+
+[ext_resource type="BankAsset" uid="uid://dgutoq4taef8c" path="res://addons/FMOD/editor/resources/banks/{07b32cfa-600d-4db7-8050-79ae9dbb185b}.tres" id="1_2dvl3"]
+[ext_resource type="BankAsset" uid="uid://dkqvhu6oa088d" path="res://addons/FMOD/editor/resources/banks/{9fae0c2e-1176-01f5-0619-f3506c481ec3}.tres" id="2_phq5j"]
+[ext_resource type="BusAsset" uid="uid://c6mu0cygrvrq7" path="res://addons/FMOD/editor/resources/busses/{e19724d4-397a-4979-a959-b28cffa96ad1}.tres" id="3_klxsg"]
+[ext_resource type="BusAsset" uid="uid://cyg25hewd0npe" path="res://addons/FMOD/editor/resources/busses/{2726becf-20ba-4947-909b-10b0dde4e32c}.tres" id="4_bt1jr"]
+[ext_resource type="EventAsset" uid="uid://cp35bfc4drpbl" path="res://addons/FMOD/editor/resources/events/{3585e98b-9d4c-477f-bb88-8c0a700379ed}.tres" id="5_yti10"]
+[ext_resource type="EventAsset" uid="uid://624vfrte8sue" path="res://addons/FMOD/editor/resources/events/{86951502-d3d0-4927-b14a-3ce9bc75dc8a}.tres" id="6_u8140"]
+[ext_resource type="EventAsset" uid="uid://cehseyu41pft8" path="res://addons/FMOD/editor/resources/events/{706cbd58-08c7-4193-83a7-a3f72b0df18c}.tres" id="7_jge5f"]
+[ext_resource type="EventAsset" uid="uid://dij7la6y4s3b6" path="res://addons/FMOD/editor/resources/events/{eef72068-6a4c-4f55-863b-6471e4989d14}.tres" id="8_wl3hq"]
+[ext_resource type="EventAsset" uid="uid://dk26nmf8uh0j2" path="res://addons/FMOD/editor/resources/events/{4d95f6f1-9317-49be-afcf-346b61411aa1}.tres" id="9_yfnh4"]
+[ext_resource type="EventAsset" uid="uid://bsyenjqnu7hrn" path="res://addons/FMOD/editor/resources/events/{b7c946fa-531c-4b8e-9634-293a0dee7329}.tres" id="10_l5vkp"]
+[ext_resource type="EventAsset" uid="uid://b6wid1ksrehnn" path="res://addons/FMOD/editor/resources/events/{a1329c8c-a90d-4ebe-83c6-8436a2decf19}.tres" id="11_hsjl7"]
+
+[resource]
+banks = {
+"{07b32cfa-600d-4db7-8050-79ae9dbb185b}": ExtResource("1_2dvl3"),
+"{9fae0c2e-1176-01f5-0619-f3506c481ec3}": ExtResource("2_phq5j")
+}
+events = {
+"{3585e98b-9d4c-477f-bb88-8c0a700379ed}": ExtResource("5_yti10"),
+"{4d95f6f1-9317-49be-afcf-346b61411aa1}": ExtResource("9_yfnh4"),
+"{706cbd58-08c7-4193-83a7-a3f72b0df18c}": ExtResource("7_jge5f"),
+"{86951502-d3d0-4927-b14a-3ce9bc75dc8a}": ExtResource("6_u8140"),
+"{a1329c8c-a90d-4ebe-83c6-8436a2decf19}": ExtResource("11_hsjl7"),
+"{b7c946fa-531c-4b8e-9634-293a0dee7329}": ExtResource("10_l5vkp"),
+"{eef72068-6a4c-4f55-863b-6471e4989d14}": ExtResource("8_wl3hq")
+}
+busses = {
+"{2726becf-20ba-4947-909b-10b0dde4e32c}": ExtResource("4_bt1jr"),
+"{e19724d4-397a-4979-a959-b28cffa96ad1}": ExtResource("3_klxsg")
+}
+bank_tree = [{
+"children": [],
+"item_type": 3,
+"node_name": "Master",
+"path": "bank:/Master",
+"resource": ExtResource("1_2dvl3")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "Master.strings",
+"path": "bank:/Master.strings",
+"resource": ExtResource("2_phq5j")
+}]
+event_tree = [{
+"children": [{
+"children": [],
+"item_type": 1,
+"node_name": "death",
+"path": "event:/SFX/death",
+"resource": ExtResource("5_yti10")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "flap",
+"path": "event:/SFX/flap",
+"resource": ExtResource("6_u8140")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "fogo",
+"path": "event:/SFX/fogo",
+"resource": ExtResource("7_jge5f")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "game_start",
+"path": "event:/SFX/game_start",
+"resource": ExtResource("8_wl3hq")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "hit",
+"path": "event:/SFX/hit",
+"resource": ExtResource("9_yfnh4")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "pandeiros",
+"path": "event:/SFX/pandeiros",
+"resource": ExtResource("10_l5vkp")
+}],
+"item_type": 7,
+"node_name": "SFX",
+"path": "",
+"resource": null
+}, {
+"children": [{
+"children": [],
+"item_type": 1,
+"node_name": "main track",
+"path": "event:/Soundtrack/main track",
+"resource": ExtResource("11_hsjl7")
+}],
+"item_type": 7,
+"node_name": "Soundtrack",
+"path": "",
+"resource": null
+}]
+bus_tree = [{
+"children": [{
+"children": [],
+"item_type": 4,
+"node_name": "Reverb",
+"path": "bus:/Reverb",
+"resource": ExtResource("4_bt1jr")
+}],
+"item_type": 4,
+"node_name": "bus:",
+"path": "bus:/",
+"resource": ExtResource("3_klxsg")
+}]

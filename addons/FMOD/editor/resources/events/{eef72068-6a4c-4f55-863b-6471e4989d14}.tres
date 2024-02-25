@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://dij7la6y4s3b6"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/SFX/game_start"
+guid = "{eef72068-6a4c-4f55-863b-6471e4989d14}"
+name = "game_start"

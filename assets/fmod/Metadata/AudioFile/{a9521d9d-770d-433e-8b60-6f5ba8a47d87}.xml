@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{a9521d9d-770d-433e-8b60-6f5ba8a47d87}">
+		<property name="assetPath">
+			<value>Music/Game Jam rhythm 150bpm.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>132.80002267573695</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a7f48e8-1a7c-4c26-b98f-83b346ab0132}</destination>
+		</relationship>
+	</object>
+</objects>

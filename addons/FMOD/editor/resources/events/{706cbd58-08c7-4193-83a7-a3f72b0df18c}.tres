@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://cehseyu41pft8"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/SFX/fogo"
+guid = "{706cbd58-08c7-4193-83a7-a3f72b0df18c}"
+name = "fogo"

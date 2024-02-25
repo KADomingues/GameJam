@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chww81q568xu8"
+path="res://.godot/imported/Pandeiro 3.wav-23fc9aa9a26c2c80061f0412e149610f.sample"
+
+[deps]
+
+source_file="res://assets/fmod/Assets/SFX/Pandeiro 3.wav"
+dest_files=["res://.godot/imported/Pandeiro 3.wav-23fc9aa9a26c2c80061f0412e149610f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

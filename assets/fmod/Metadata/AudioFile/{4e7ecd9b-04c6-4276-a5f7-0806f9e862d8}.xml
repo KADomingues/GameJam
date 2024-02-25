@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{4e7ecd9b-04c6-4276-a5f7-0806f9e862d8}">
+		<property name="assetPath">
+			<value>SFX/Pandeiro 3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0991836734693878</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a7f48e8-1a7c-4c26-b98f-83b346ab0132}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6g2h1n5u8w5a"]
+[gd_scene load_steps=16 format=3 uid="uid://c6g2h1n5u8w5a"]
 
 [ext_resource type="Script" path="res://nodes/main.gd" id="1_1bluq"]
 [ext_resource type="PackedScene" uid="uid://c6xxghwhvxoev" path="res://nodes/player.tscn" id="1_qf5kr"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://menfgaui84o3" path="res://nodes/mine.tscn" id="3_2vma5"]
 [ext_resource type="PackedScene" uid="uid://dtgpsgp40v3st" path="res://nodes/hud.tscn" id="4_3mhbm"]
 [ext_resource type="PackedScene" uid="uid://c4ib42g0ghynt" path="res://nodes/bounce_ball.tscn" id="4_u8srn"]
-[ext_resource type="PackedScene" uid="uid://b5uwoddnbn5rn" path="res://nodes/audios.tscn" id="7_6dhnr"]
+[ext_resource type="EventAsset" uid="uid://b6wid1ksrehnn" path="res://addons/FMOD/editor/resources/events/{a1329c8c-a90d-4ebe-83c6-8436a2decf19}.tres" id="5_66mvh"]
+[ext_resource type="EventAsset" uid="uid://dij7la6y4s3b6" path="res://addons/FMOD/editor/resources/events/{eef72068-6a4c-4f55-863b-6471e4989d14}.tres" id="5_mu6yb"]
+[ext_resource type="EventAsset" uid="uid://cp35bfc4drpbl" path="res://addons/FMOD/editor/resources/events/{3585e98b-9d4c-477f-bb88-8c0a700379ed}.tres" id="6_banri"]
+[ext_resource type="BankAsset" uid="uid://dgutoq4taef8c" path="res://addons/FMOD/editor/resources/banks/{07b32cfa-600d-4db7-8050-79ae9dbb185b}.tres" id="7_dhed7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hio45"]
 size = Vector2(64, 832)
@@ -31,6 +34,9 @@ script = ExtResource("1_1bluq")
 mob_scene = ExtResource("2_nb21i")
 mine_scene = ExtResource("3_2vma5")
 bounce_scene = ExtResource("4_u8srn")
+StartGameEvent = ExtResource("5_mu6yb")
+BGMEvent = ExtResource("5_66mvh")
+DeathEvent = ExtResource("6_banri")
 
 [node name="Walls" type="Node" parent="."]
 
@@ -96,7 +102,9 @@ curve = SubResource("Curve2D_i5h5o")
 
 [node name="HUD" parent="." instance=ExtResource("4_3mhbm")]
 
-[node name="audios" parent="." instance=ExtResource("7_6dhnr")]
+[node name="StudioBankLoader" type="StudioBankLoader" parent="."]
+num_banks = 1
+bank_0 = ExtResource("7_dhed7")
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="mobTimer" to="." method="_on_mob_timer_timeout"]
