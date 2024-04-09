@@ -129,6 +129,6 @@ func _on_mob_timer_timeout():
 		if (randi() % 3) == (3 - 1):
 			spawnMob()
 		
-	if score >= 25:
+	if score >= 21:
 		if (randi() % 7) == (7 - 1):
 			spawn_bounce_ball()	

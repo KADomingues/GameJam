@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://menfgaui84o3"]
+[gd_scene load_steps=8 format=3 uid="uid://menfgaui84o3"]
 
 [ext_resource type="Script" path="res://nodes/mine.gd" id="1_f3xhu"]
+[ext_resource type="EventAsset" uid="uid://cehseyu41pft8" path="res://addons/FMOD/editor/resources/events/{706cbd58-08c7-4193-83a7-a3f72b0df18c}.tres" id="2_38atf"]
 [ext_resource type="Texture2D" uid="uid://2c77w4nb63rk" path="res://assets/art/WhiteExclamationMark1.png" id="2_af4cq"]
 [ext_resource type="Texture2D" uid="uid://blr7dpbj3jvwi" path="res://assets/art/sprites/SPRITE_FOGO_INFERNO.png" id="3_yev5o"]
 [ext_resource type="Texture2D" uid="uid://s3mny4q8gsqi" path="res://assets/art/sprites/SPRITE_FOGO_INFERNO_02-12.png" id="4_5hmbc"]
@@ -35,6 +36,7 @@ collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_f3xhu")
+mineSound = ExtResource("2_38atf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)

@@ -10,7 +10,13 @@
 [ext_resource type="EventAsset" uid="uid://dij7la6y4s3b6" path="res://addons/FMOD/editor/resources/events/{eef72068-6a4c-4f55-863b-6471e4989d14}.tres" id="8_wl3hq"]
 [ext_resource type="EventAsset" uid="uid://dk26nmf8uh0j2" path="res://addons/FMOD/editor/resources/events/{4d95f6f1-9317-49be-afcf-346b61411aa1}.tres" id="9_yfnh4"]
 [ext_resource type="EventAsset" uid="uid://bsyenjqnu7hrn" path="res://addons/FMOD/editor/resources/events/{b7c946fa-531c-4b8e-9634-293a0dee7329}.tres" id="10_l5vkp"]
-[ext_resource type="EventAsset" uid="uid://b6wid1ksrehnn" path="res://addons/FMOD/editor/resources/events/{a1329c8c-a90d-4ebe-83c6-8436a2decf19}.tres" id="11_hsjl7"]
+
+[sub_resource type="EventAsset" id="EventAsset_vx8he"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Soundtrack/1 - Game Jam rhythm 150bpm"
+guid = "{ea62f6c5-749b-497c-b4f9-29169f7d61c6}"
+name = "1 - Game Jam rhythm 150bpm"
 
 [resource]
 banks = {
@@ -22,8 +28,8 @@ events = {
 "{4d95f6f1-9317-49be-afcf-346b61411aa1}": ExtResource("9_yfnh4"),
 "{706cbd58-08c7-4193-83a7-a3f72b0df18c}": ExtResource("7_jge5f"),
 "{86951502-d3d0-4927-b14a-3ce9bc75dc8a}": ExtResource("6_u8140"),
-"{a1329c8c-a90d-4ebe-83c6-8436a2decf19}": ExtResource("11_hsjl7"),
 "{b7c946fa-531c-4b8e-9634-293a0dee7329}": ExtResource("10_l5vkp"),
+"{ea62f6c5-749b-497c-b4f9-29169f7d61c6}": SubResource("EventAsset_vx8he"),
 "{eef72068-6a4c-4f55-863b-6471e4989d14}": ExtResource("8_wl3hq")
 }
 busses = {
@@ -89,9 +95,9 @@ event_tree = [{
 "children": [{
 "children": [],
 "item_type": 1,
-"node_name": "main track",
-"path": "event:/Soundtrack/main track",
-"resource": ExtResource("11_hsjl7")
+"node_name": "1 - Game Jam rhythm 150bpm",
+"path": "event:/Soundtrack/1 - Game Jam rhythm 150bpm",
+"resource": SubResource("EventAsset_vx8he")
 }],
 "item_type": 7,
 "node_name": "Soundtrack",

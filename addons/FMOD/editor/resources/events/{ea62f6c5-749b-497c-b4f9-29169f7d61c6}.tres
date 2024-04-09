@@ -1,0 +1,8 @@
+[gd_resource type="EventAsset" format=3 uid="uid://dr4vthuoybgom"]
+
+[resource]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Soundtrack/1 - Game Jam rhythm 150bpm"
+guid = "{ea62f6c5-749b-497c-b4f9-29169f7d61c6}"
+name = "1 - Game Jam rhythm 150bpm"

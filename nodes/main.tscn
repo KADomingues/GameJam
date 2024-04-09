@@ -6,10 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://menfgaui84o3" path="res://nodes/mine.tscn" id="3_2vma5"]
 [ext_resource type="PackedScene" uid="uid://dtgpsgp40v3st" path="res://nodes/hud.tscn" id="4_3mhbm"]
 [ext_resource type="PackedScene" uid="uid://c4ib42g0ghynt" path="res://nodes/bounce_ball.tscn" id="4_u8srn"]
-[ext_resource type="EventAsset" uid="uid://b6wid1ksrehnn" path="res://addons/FMOD/editor/resources/events/{a1329c8c-a90d-4ebe-83c6-8436a2decf19}.tres" id="5_66mvh"]
 [ext_resource type="EventAsset" uid="uid://dij7la6y4s3b6" path="res://addons/FMOD/editor/resources/events/{eef72068-6a4c-4f55-863b-6471e4989d14}.tres" id="5_mu6yb"]
 [ext_resource type="EventAsset" uid="uid://cp35bfc4drpbl" path="res://addons/FMOD/editor/resources/events/{3585e98b-9d4c-477f-bb88-8c0a700379ed}.tres" id="6_banri"]
 [ext_resource type="BankAsset" uid="uid://dgutoq4taef8c" path="res://addons/FMOD/editor/resources/banks/{07b32cfa-600d-4db7-8050-79ae9dbb185b}.tres" id="7_dhed7"]
+
+[sub_resource type="EventAsset" id="EventAsset_vx8he"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Soundtrack/1 - Game Jam rhythm 150bpm"
+guid = "{ea62f6c5-749b-497c-b4f9-29169f7d61c6}"
+name = "1 - Game Jam rhythm 150bpm"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hio45"]
 size = Vector2(64, 832)
@@ -35,7 +41,7 @@ mob_scene = ExtResource("2_nb21i")
 mine_scene = ExtResource("3_2vma5")
 bounce_scene = ExtResource("4_u8srn")
 StartGameEvent = ExtResource("5_mu6yb")
-BGMEvent = ExtResource("5_66mvh")
+BGMEvent = SubResource("EventAsset_vx8he")
 DeathEvent = ExtResource("6_banri")
 
 [node name="Walls" type="Node" parent="."]
